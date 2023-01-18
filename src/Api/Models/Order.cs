@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Diagnostics.CodeAnalysis;
 using System.Text.Json.Serialization;
 using RiskCenterStoreApi.Enumerations;
 
@@ -33,6 +34,10 @@ namespace RiskCenterStoreApi.Models
         //for business rules relation is 1 order - 1 product, but 1 product - many orders
         [ForeignKey("product_id")]
         [Column("product_id")]
-        public virtual Product Product { get; set; }
+        public Product Product { get; set; }
+
+        [NotNull]
+        [Column("session_id")]
+        public string sessionId { get; set; } = "";
     }
 }
