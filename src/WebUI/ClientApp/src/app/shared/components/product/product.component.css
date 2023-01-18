@@ -1,0 +1,32 @@
+.card.card-product-grid {
+    padding: .5rem 0;
+    box-shadow: 0 0 2px 0 gray;
+}
+
+.img-wrap img.img-product {
+    min-width: 150px;
+    max-width: 200px;
+}
+
+.img-wrap {
+    display: flex;
+    justify-content: center;
+}
+
+.info-wrap {
+    padding: 1rem;
+}
+.info-wrap .price {
+    font-size: xx-large;
+    padding: 1rem 0;
+}
+
+.info-wrap .title {
+    font-size: large;
+    height: 50px;
+}
+
+.info-wrap .buttons-wrap {
+    display: flex;
+    justify-content: space-between;
+}

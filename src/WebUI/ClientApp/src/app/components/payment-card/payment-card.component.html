@@ -1,0 +1,50 @@
+<div class="card">
+    <div class="card-body">
+  <section class="d-flex">
+  <div class="debit-card m-auto mb-3">
+      <div class="d-flex flex-column h-100">
+          <label class="d-block">
+              <div class="d-flex position-relative">
+                  <div class="ms-auto">
+                      <img src="https://www.freepnglogos.com/uploads/visa-inc-logo-png-11.png" class="visa"
+                          alt="">
+                      </div>
+                  </div>
+              </label>
+              <strong class="text-white mt-5">{{paymentCard.cardNumber ? paymentCard.cardNumber : "1234567890123"}}</strong>
+              <div class="d-flex align-items-center justify-content-between">
+              <strong class="mt-2 mb-4 text-white fw-bold">{{paymentCard.cardHolder ? paymentCard.cardHolder.toUpperCase() : "CARD HOLDER"}}</strong>
+          </div>
+      </div>
+  </div>
+  </section>
+  <section>
+  <div class="row mb-4">
+        <div class="col form-outline">
+            <label class="form-label" for="formNameOnCard">Titular</label>
+          <input type="text" [(ngModel)]="paymentCard.cardHolder" [ngModelOptions]="{standalone: true}" id="formNameOnCard" class="form-control" />
+        </div>
+        <div class="col form-outline">
+            <label class="form-label" for="formCardNumber">Número de tarjeta</label>
+          <input type="text" [(ngModel)]="paymentCard.cardNumber" [ngModelOptions]="{standalone: true}" id="formCardNumber" class="form-control"
+          maxlength="20"/>
+        </div>
+  </div>
+  <div class="row mb-4">
+      <div class="col-3 form-outline">
+          <label class="form-label" for="formExpiration">Expiración</label>
+        <input type="text" [(ngModel)]="paymentCard.expiredDate" [ngModelOptions]="{standalone: true}" id="formExpiration" class="form-control"
+        maxlength="5"/>
+      </div>
+      <div class="col-3 form-outline">
+          <label class="form-label" for="formCVV">CVV</label>
+        <input type="text" [(ngModel)]="paymentCard.cvv" [ngModelOptions]="{standalone: true}" id="formCVV" class="form-control" 
+        maxlength="3"/>
+      </div>
+    <div class="col-6 d-flex">
+      <button class="m-auto btn btn-primary" (click)="payOrder()">Pagar</button>
+    </div>
+  </div>
+</section>
+</div>
+</div>

@@ -1,0 +1,8 @@
+.align-message-bottom-right {
+    bottom: 0;
+    right: 0;
+}
+
+.w-auto {
+    min-width: 30%;
+}

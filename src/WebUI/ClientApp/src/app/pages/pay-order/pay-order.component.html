@@ -1,0 +1,15 @@
+<section class="row">
+    <app-payment-card class="m-auto col-sm-4" (toPay)="processPayment($event)"></app-payment-card>
+</section>
+<section class="row">
+    <div *ngIf="resultPayment" class="alert w-auto align-items-center position-absolute align-message-bottom-right" [class]="{'alert-danger': resultPayment == 'INVALIDDATA' || resultPayment == 'REJECTED', 'alert-success': resultPayment == 'APPROVED'}" role="alert">
+        <label>
+          {{
+            resultPayment == 'APPROVED' ? "Pago procesado con exito" : 
+            resultPayment == 'REJECTED' ? "Pago Rechazado" : "Error al procesar el pago, revise los datos ingresados"
+        }}
+        </label>
+      </div>
+</section>
+
+

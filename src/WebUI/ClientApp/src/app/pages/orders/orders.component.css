@@ -1,0 +1,7 @@
+.page-title {
+color: var(--primary)
+}
+
+table thead tr th {
+    color: var(--primary)
+}
