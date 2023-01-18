@@ -1,16 +1,47 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  background-color: rgba(211, 211, 211, 0.548);
+}
+
+/* variables globales*/
+:root {
+  --primary: #F36E21;
+  --border-primary: #f5813d;
+  --border-warning: #f5d060;
+}
 
 /* Provide sufficient contrast against white background */
 a {
-  color: #0366d6;
+  color: var(--primary);
 }
 
 code {
-  color: #e01a76;
+  color: var(--primary)
 }
 
 .btn-primary {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+  color: "gray";
+  background-color: var(--primary);
+  border-color: var(--border-primary);
+}
+
+.btn-primary:hover {
+  background-color: var(--border-primary);
+}
+
+.btn-warning:hover {
+  background-color: var(--border-warning);
+}
+.btn-icon {
+  width: 50px;
+}
+
+.order-created {
+  color: orange;
+}
+.order-payed {
+  color: green;
+}
+.order-rejected {
+  color: red;
 }

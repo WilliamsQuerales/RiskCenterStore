@@ -87,9 +87,9 @@ namespace RiskCenterStoreApi.Controllers
             var product2 = this.sContext.Products.FirstOrDefault(product => product.name == "Lomo Del Campo A La Mesa 780 Gr");
 
             var orders = new List<Order> {
-                new Order(){ customerName = "Ana", code= Guid.NewGuid().ToString("n").Substring(0,8), customerEmail="ana@mail.com", customerMobile="000111222", Product = product1 },
-                new Order(){ customerName = "Williams", code= Guid.NewGuid().ToString("n").Substring(0,8), customerEmail="williams@mail.com",status= Enumerations.OrderStatus.REJECTED, customerMobile="222111000", Product = product2 },
-                new Order(){ customerName = "Williams", code= Guid.NewGuid().ToString("n").Substring(0,8), customerEmail="williams@mail.com",status= Enumerations.OrderStatus.PAYED, customerMobile="222111000", Product = product2 }
+                new Order(){ customerName = "Ana", code= Guid.NewGuid().ToString("n").Substring(0,8), customerEmail="ana@mail.com", customerMobile="000111222", Product = product1, sessionId= "prueba" },
+                new Order(){ customerName = "Williams", code= Guid.NewGuid().ToString("n").Substring(0,8), customerEmail="williams@mail.com",status= Enumerations.OrderStatus.REJECTED, customerMobile="222111000", Product = product2, sessionId= "prueba" },
+                new Order(){ customerName = "Williams", code= Guid.NewGuid().ToString("n").Substring(0,8), customerEmail="williams@mail.com",status= Enumerations.OrderStatus.PAYED, customerMobile="222111000", Product = product2, sessionId= "prueba" }
             };
             
             this.sContext.Orders.AddRange(orders);

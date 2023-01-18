@@ -1,0 +1,34 @@
+<!-- ============== SECTION CONTENT ============== -->
+<section class="padding-y">
+    <div class="container">
+        <div class="row">
+            <main>
+                <!-- ========= content items ========= -->
+                <div class="row">
+                    <ng-template ngFor let-product="$implicit" [ngForOf]="products" >
+                        <app-product [product]="product" class="col-lg-3 col-md-4 col-sm-6"></app-product>
+                    </ng-template>
+                </div>
+                <!-- ========= End content items ========= -->
+                <hr>
+                <!-- <footer class="d-flex mt-4">
+                    <nav class="ms-3">
+                        <ul class="pagination">
+                            <li *ngIf="pagination.currentPage != 0" class="page-item">
+                                <a class="page-link" href="#">Anterior</a>
+                            </li>
+                            <ng-template ngFor let-item [ngForOf]="pagination.pages">
+                                <li class="page-item" [class]="{'active': pagination.currentPage == item}" (click)="pagination.currentPage = item">
+                                    <span class="page-link">{{item}}</span>
+                                </li>
+                            </ng-template>
+                            <li class="page-item">
+                                <a *ngIf="pagination.currentPage != pagination.totalPages" class="page-link" href="#">Siguiente</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </footer> -->
+            </main>
+        </div>
+    </div>
+</section>

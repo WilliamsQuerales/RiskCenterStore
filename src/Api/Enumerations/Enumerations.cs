@@ -26,7 +26,7 @@ namespace RiskCenterStoreApi.Enumerations
     {
         [Description("Approved")]
         APPROVED,
-        [Description("Invalid Data")]
+        [Description("InvalidData")]
         INVALIDDATA,
         [Description("Rejected")]
         REJECTED,

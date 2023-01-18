@@ -1,0 +1,15 @@
+<figure class="card card-product-grid">
+    <div class="img-wrap">
+        <img class="img-product" [src]="product.imageUrl">
+    </div>
+    <figcaption class="info-wrap border-top">
+        <div class="price-wrap">
+            <strong class="price">${{product.price}}</strong>
+        </div>
+        <p class="title mb-2">{{product.name}}</p>
+        <div *ngIf="!inOrder" class="buttons-wrap">
+            <a href="#" [routerLink]="['/order','new',product.id]" class="btn btn-primary">Comprar</a>
+            <img [src]="getIconFavorite()" class="btn btn-icon heart" (click)="toogleFavorite()"/>
+        </div>
+    </figcaption>
+</figure>

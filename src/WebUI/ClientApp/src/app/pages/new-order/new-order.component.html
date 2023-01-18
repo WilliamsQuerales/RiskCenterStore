@@ -1,0 +1,5 @@
+<div class="row">
+    <app-product *ngIf="order.product" [product]="order.product" [inOrder]="true" class="col-lg-4 col-md-4 col-sm-6"></app-product>
+
+    <app-form-client class="col-lg-8 col-md-8 col-sm-6" [order]="order" [isNewOrder]="true" (onSave)="saveNewOrder($event)"></app-form-client>
+</div>

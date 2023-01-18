@@ -1,0 +1,15 @@
+<form class="card">
+    <div class="form-group mb-2">
+    <label for="inputName">Nombre</label>
+    <input type="text" [(ngModel)]="currentOrder.customerName" [ngModelOptions]="{standalone: true}" class="form-control" id="inputName" aria-describedby="Nombre" placeholder="Nombre Apellido">
+    </div>
+    <div class="form-group mb-2">
+        <label for="inputEmail">Correo</label>
+        <input type="email" [(ngModel)]="currentOrder.customerEmail" [ngModelOptions]="{standalone: true}" class="form-control" id="inputEmail" aria-describedby="Correo" placeholder="correo@mail.com">
+    </div>
+    <div class="form-group mb-2">
+        <label for="inputPhone">Teléfono</label>
+        <input type="tel" [(ngModel)]="currentOrder.customerMobile" [ngModelOptions]="{standalone: true}" class="form-control" id="inputPhone" aria-describedby="Teléfono" placeholder="123456789">
+    </div>
+    <button type="submit" class="btn btn-primary  mt-3" (click)="saveNewOrder()">Comprar</button>
+    </form>

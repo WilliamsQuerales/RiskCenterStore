@@ -19,8 +19,20 @@ builder.Services.AddCors(options =>
     options.AddPolicy(name: myAllowedHostSpecificOrigins,
                       policy =>
                       {
-                          policy.WithOrigins(allowedHosts);
+                          policy.WithOrigins(allowedHosts)
+                          .AllowAnyHeader()
+                          .AllowAnyMethod();
                       });
+});
+
+// configuration Session in cache
+builder.Services.AddDistributedMemoryCache();
+
+builder.Services.AddSession(options =>
+{
+    options.Cookie.Name = "RiskCenterStore";
+    options.IdleTimeout = TimeSpan.FromSeconds(12*60*60); // 1 hour session
+    options.Cookie.IsEssential = true;
 });
 
 // Configure connection to db
@@ -33,6 +45,9 @@ var app = builder.Build();
 
 // Enable CORS
 app.UseCors(myAllowedHostSpecificOrigins);
+
+// Enable Session
+app.UseSession();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

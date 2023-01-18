@@ -1,0 +1,33 @@
+<div class="card p-3">
+<h1 class=" card-title page-title">Ordenes</h1>
+<div class="card-body">
+    <table class="table table-hover table-striped table-responsive">
+        <thead>
+            <tr>
+                <th scope="col">Código</th>
+                <th scope="col" colspan="2">Cliente</th>
+                <th scope="col" colspan="2">Correo</th>
+                <th scope="col">Teléfono</th>
+                <th scope="col">Estado</th>
+                <th scope="col"></th>
+            </tr>
+    </thead>
+    <tbody>
+        <ng-template ngFor let-order="$implicit" [ngForOf]="orders">
+            <tr [id]="order.id">
+                <th scope="row">{{order.code}}</th>
+                <td colspan="2">{{order.customerName}}</td>
+                <td colspan="2">{{order.customerEmail}}</td>
+                <td>{{order.customerMobile}}</td>
+                <td [class]="getClassStatus(order.status)">{{getStatusDescription(order.status)}}</td>
+                <td>
+                    <a href="#" [routerLink]="['/order',order.id]" data-bs-toggle="tooltip" data-bs-placement="top" title="Ver detalles"><img src="https://www.svgrepo.com/show/479944/magnifying-glass.svg" class="btn btn-primary btn-icon"/></a>
+                    <a *ngIf="order.status == StatusOrder.CREATED" style="margin-left: 1rem;" href="#" [routerLink]="['/order',order.id,'pay']" data-bs-toggle="tooltip" data-bs-placement="top" title="Pagar"><img src="https://www.svgrepo.com/show/390121/creadit-card-debit-hand-pay.svg" class="btn btn-warning btn-icon"/></a>
+                    <a *ngIf="order.status == StatusOrder.REJECTED" style="margin-left: 1rem;" href="#" [routerLink]="['/order',order.id,'pay']" data-bs-toggle="tooltip" data-bs-placement="top" title="Reintentar Pago"><img src="https://www.svgrepo.com/show/88889/refund.svg" class="btn btn-warning btn-icon"/></a>
+                </td>
+            </tr>
+        </ng-template>
+    </tbody>
+</table>
+</div>
+</div>
