@@ -1,4 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using System.Diagnostics;
+using System.Reflection.Metadata;
 
 namespace RiskCenterStoreApi.Models
 {
@@ -7,5 +9,9 @@ namespace RiskCenterStoreApi.Models
         public StoreContext(DbContextOptions options) : base(options) {
         
         }
+
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<Product> Products { get; set; }
+        public DbSet<ProductCategory> ProductCategories { get; set; }
     }
 }
